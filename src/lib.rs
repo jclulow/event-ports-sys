@@ -60,28 +60,28 @@ pub const EBADFD: i32 =                 81;
 #[derive(Debug)]
 #[repr(C)]
 pub struct PortEvent {
-    portev_events: c_int,
-    portev_source: c_ushort,
-    _portev_pad: c_ushort,
-    portev_object: *mut c_void,
-    portev_user: *mut c_void,
+    pub portev_events: c_int,
+    pub portev_source: c_ushort,
+    pub _portev_pad: c_ushort,
+    pub portev_object: *mut c_void,
+    pub portev_user: *mut c_void,
 }
 
 #[derive(Debug, PartialEq)]
 #[repr(C)]
 pub struct Timestruct {
-    tv_sec: c_long,
-    tv_nsec: c_long,
+    pub tv_sec: c_long,
+    pub tv_nsec: c_long,
 }
 
 #[derive(Debug)]
 #[repr(C)]
 pub struct FileObj {
-    fo_atime: Timestruct,
-    fo_mtime: Timestruct,
-    fo_ctime: Timestruct,
-    _fo_pad: [*mut c_void; 3],
-    fo_name: *const c_char,
+    pub fo_atime: Timestruct,
+    pub fo_mtime: Timestruct,
+    pub fo_ctime: Timestruct,
+    pub _fo_pad: [*mut c_void; 3],
+    pub fo_name: *const c_char,
 }
 
 #[link(name = "c")]
